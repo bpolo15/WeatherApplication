@@ -29,7 +29,7 @@ $(document).ready(function() {
       //below is the API call, using the api 'openweathermap' and adding the city to be searched
     $.ajax({
       type: "GET",
-      url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=600327cb1a9160fea2ab005509d1dc6d&units=imperial",
+      url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=600327cb1a9160fea2ab005509d1dc6d&units=imperial",
       dataType: "json",
       //we then grab the data from the promise called 'success'
       success: function(data) {
@@ -59,7 +59,7 @@ $(document).ready(function() {
         //below adds the variable cardBody, which is a div tag, with the class 'card-body'
         var cardBody = $("<div>").addClass("card-body");
         //below is the variable img with adds an img tag with 'src' and the webiste added inside the carrots which will add an image to the page
-        var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+        var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
         // merge and add to page
         //here we are appending the image to the title which is the h3 tag from above
@@ -84,7 +84,7 @@ $(document).ready(function() {
       //below we are calling the api and searching for the city
     $.ajax({
       type: "GET",
-      url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=600327cb1a9160fea2ab005509d1dc6d&units=imperial",
+      url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=600327cb1a9160fea2ab005509d1dc6d&units=imperial",
       dataType: "json",
       success: function(data) {
         //we are then using the data we got and using that data below
@@ -104,7 +104,7 @@ $(document).ready(function() {
             //below we add the variable title, then an h5 tag with the class 'card-title' it then converts the information from the api call in to text 
             var title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
             //below creates an image tag and adds in the 'src' and image website along with the added information from the api call
-            var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
+            var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
             //below creates a new p tag and adds the class 'card-text' it then inputs the string 'temp' and adds in the information from the api call converting it to text, and ending the string to 'F'
             var p1 = $("<p>").addClass("card-text").text("Temp: " + data.list[i].main.temp_max + " °F");
             //below creates the p tag with the class 'card-text' and adds the string Humdity' and the text data from the api call, then adds "%" at the end
@@ -124,7 +124,7 @@ $(document).ready(function() {
       //below is an API function and we are using the longitude and latitude in the search to get our information 
     $.ajax({
       type: "GET",
-      url: "http://api.openweathermap.org/data/2.5/uvi?appid=600327cb1a9160fea2ab005509d1dc6d&lat=" + lat + "&lon=" + lon,
+      url: "https://api.openweathermap.org/data/2.5/uvi?appid=600327cb1a9160fea2ab005509d1dc6d&lat=" + lat + "&lon=" + lon,
       dataType: "json",
       success: function(data) {
           //
